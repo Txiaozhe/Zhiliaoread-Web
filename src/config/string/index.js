@@ -1,5 +1,5 @@
 'use strict';
 
-import { String } from './en_us';
+import { String } from './zh_cn';
 
 export default String;

@@ -1,5 +1,5 @@
 'use strict';
 
-import configureStore from "./store";
+import configureStore from './store';
 const store = configureStore();
 export default store;
