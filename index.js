@@ -1,16 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import store from './src/redux/store';
+import { Provider } from 'react-redux'
 import './index.css';
-import { DatePicker } from 'antd';
+import { Button } from 'antd';
 
-function App() {
-  return (
-    <div style={{ margin: 100 }}>
-      <h1>AntDesign Demo</h1>
-      <hr /><br />
-      <DatePicker />
-    </div>
-  );
-}
+import Test from './src/pages/test/test.page';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const router = (
+  <Provider store={ store }>
+    <Test />
+  </Provider>
+);
+
+ReactDOM.render(router, document.getElementById('root'));
