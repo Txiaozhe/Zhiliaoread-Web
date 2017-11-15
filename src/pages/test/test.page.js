@@ -4,6 +4,8 @@ import React from 'react';
 
 import { Button } from 'antd';
 
+import { String } from '../../config';
+
 import { connect } from 'react-redux';
 import { test } from '../../redux/actions/test'
 
@@ -17,6 +19,7 @@ class Test extends React.Component {
 
         return (
           <div style={{ margin: 100 }}>
+            <h1>{String.Test}</h1>
             <Button onClick={ this.increase }>  +  </Button>
             <span style={{ margin: 10, fontSize: 20 }}>{count}</span>
             <Button onClick={ this.decrease }>  -  </Button>
