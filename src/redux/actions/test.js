@@ -1,6 +1,11 @@
+/**
+ * Creator: Tang Xiaoji
+ * Time: 2017-11-15
+ */
+
 'use strict';
 
-import { Actions } from '../actions';
+import {Actions} from '../actions';
 
 function increase() {
   return (dispatch) => {

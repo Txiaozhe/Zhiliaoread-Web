@@ -1,3 +1,8 @@
+/**
+ * Creator: Tang Xiaoji
+ * Time: 2017-11-15
+ */
+
 'use strict';
 
 import { Actions } from '../actions';
@@ -12,13 +17,13 @@ export function test(state = initialState, action) {
       return {
         ...state,
         count: state.count + 1,
-      }
+      };
     }
     case Actions.Decrease : {
       return {
         ...state,
         count: state.count - 1,
-      }
+      };
     }
     default: {
       return state;

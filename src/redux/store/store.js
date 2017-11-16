@@ -1,9 +1,14 @@
+/**
+ * Creator: Tang Xiaoji
+ * Time: 2017-11-15
+ */
+
 'use strict';
 
-import { compose, createStore, applyMiddleware } from 'redux';
+import {compose, createStore, applyMiddleware} from 'redux';
 import thunk from 'redux-thunk';
-import { createLogger } from 'redux-logger';
-import { persistStore, autoRehydrate } from 'redux-persist';
+import {createLogger} from 'redux-logger';
+import {persistStore, autoRehydrate} from 'redux-persist';
 
 const reducers = require('../reducers');
 const logger = createLogger();
