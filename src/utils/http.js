@@ -25,7 +25,7 @@ class Http {
     console.log('Post ' + url + ' started.');
     request
       .post(url)
-      .send(params) // sends a JSON post body
+      .send(params)
       .set('Accept', 'application/json')
       .set('Content-Type', 'application/json')
       .end((err, res) => {
