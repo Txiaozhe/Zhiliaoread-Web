@@ -12,6 +12,7 @@ import {connect} from 'react-redux';
 
 import {String} from '../../config';
 import {Colors} from '../../styles'
+import {Http} from '../../utils';
 import {test} from '../../redux/actions/test'
 
 class Test extends React.Component {
@@ -32,7 +33,9 @@ class Test extends React.Component {
     );
   }
 
-  increase = () => {
+  async increase() {
+    const res = await Http.get('http://127.0.0.1:3000');
+    console.log(res);
     this.props.dispatch(test.increase());
   };
 
