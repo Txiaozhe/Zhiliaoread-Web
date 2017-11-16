@@ -33,9 +33,12 @@ class Test extends React.Component {
     );
   }
 
-  async increase() {
-    const res = await Http.get('http://127.0.0.1:3000');
-    console.log(res);
+  increase = () => {
+    Http.get('http://127.0.0.1:7001', (res) => {
+      console.log(res.body);
+    }, (err) => {
+      console.log(err);
+    });
     this.props.dispatch(test.increase());
   };
 

@@ -3,46 +3,38 @@
  * Time: 2017-11-16
  */
 
+import request from 'superagent';
+
 class Http {
   constructor() {}
 
-  async get(url) {
+  async get(url, onSuccess, onFailed) {
     console.log('Get ' + url + ' started.');
-
-    try {
-      const resp = await fetch(url, {
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        mode: 'cors',
-        credentials: 'include'
+    request
+      .get(url)
+      .end((err, res) => {
+        if(err) {
+          onFailed && onFailed(err);
+        } else {
+          onSuccess && onSuccess(res)
+        }
       });
-
-      return await resp.json();
-    } catch (error) {
-      throw error
-    }
   }
 
-  async post(url, params) {
+  async post(url, params, onSuccess, onFailed) {
     console.log('Post ' + url + ' started.');
-
-    try {
-      const resp = await fetch(url, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        mode: 'cors',
-        credentials: 'include',
-        body: JSON.stringify(params)
+    request
+      .post(url)
+      .send(params) // sends a JSON post body
+      .set('Accept', 'application/json')
+      .set('Content-Type', 'application/json')
+      .end((err, res) => {
+        if(err) {
+          onFailed && onFailed();
+        } else {
+          onSuccess && onSuccess();
+        }
       });
-
-      return await resp.json();
-    } catch (error) {
-      throw error;
-    }
   }
 }
 
