@@ -6,14 +6,14 @@
 import request from 'superagent';
 
 class Http {
-  constructor() {}
+  constructor() { }
 
   async get(url, onSuccess, onFailed) {
     console.log('Get ' + url + ' started.');
     request
       .get(url)
       .end((err, res) => {
-        if(err) {
+        if (err) {
           onFailed && onFailed(err);
         } else {
           onSuccess && onSuccess(res)
@@ -29,7 +29,7 @@ class Http {
       .set('Accept', 'application/json')
       .set('Content-Type', 'application/json')
       .end((err, res) => {
-        if(err) {
+        if (err) {
           onFailed && onFailed();
         } else {
           onSuccess && onSuccess();

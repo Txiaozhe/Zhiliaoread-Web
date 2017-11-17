@@ -5,7 +5,7 @@
 
 'use strict';
 
-import {Actions} from '../actions';
+import { Actions } from '../actions';
 
 function increase() {
   return (dispatch) => {
