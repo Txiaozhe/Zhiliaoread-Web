@@ -34,11 +34,6 @@ class Test extends React.Component {
   }
 
   increase = () => {
-    Http.get('http://127.0.0.1:7001', (res) => {
-      console.log(res.body);
-    }, (err) => {
-      console.log(err);
-    });
     this.props.dispatch(test.increase());
   };
 
