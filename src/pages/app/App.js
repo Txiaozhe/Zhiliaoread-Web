@@ -10,7 +10,9 @@ import { connect } from 'react-redux';
 
 import Test from '../test/Test';
 
-class App extends React.Component {
+import Home from '../home/Home';
+
+/*class App extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -20,6 +22,17 @@ class App extends React.Component {
       <Test />
     );
   }
+}*/
+
+class App extends React.Component {
+  
+
+
+render() {
+  return (
+    <Home />
+  );
+}
 }
 
 export default connect()(App);
