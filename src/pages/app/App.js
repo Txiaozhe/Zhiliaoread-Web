@@ -8,8 +8,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import Home from '../home/Home';
-
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -17,7 +15,9 @@ class App extends React.Component {
 
   render() {
     return (
-      <Home />
+      <div>
+        {this.props.children}
+      </div>
     );
   }
 }

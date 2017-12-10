@@ -5,6 +5,16 @@
 
 'use strict';
 
-export const String = {
-  Test: 'Counter'
+export const String_en_us = {
+  Title: 'Zhiliao Read',
+  Topic: 'Reading Is Backing',
+  Test: 'Counter',
+  Login: 'Sign in',
+  Register: 'Sign up',
+  SavePassword: 'Save Password',
+  ForgetPassword: 'Forget Password',
+  Placeholder: {
+    UserName: 'Username',
+    Password: 'Password'
+  }
 };

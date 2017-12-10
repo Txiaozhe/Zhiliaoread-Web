@@ -8,22 +8,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import store from './src/redux/store';
-import { Provider } from 'react-redux';
+import {Provider} from 'react-redux';
 
 import {
   BrowserRouter as Router,
   Route,
-  Link
 } from 'react-router-dom';
 
-import App from './src/pages/app/App';
+import Home from './src/pages/home/Home';
 
 const router = (
   <Provider store={store}>
     <Router>
-      <Route path="/" component={App}>
-        {/* Route */}
-      </Route>
+      <Route path="/" component={Home}/>
     </Router>
   </Provider>
 );

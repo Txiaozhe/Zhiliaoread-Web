@@ -2,6 +2,10 @@ import React from 'react';
 
 import './home.css';
 
+import { connect } from 'react-redux';
+import { String, Url } from '../../config';
+import { Http } from '../../utils';
+
 import {Input} from 'antd';
 import {Button} from 'antd';
 import {Checkbox} from 'antd';
@@ -15,29 +19,48 @@ const bg = {
 };
 
 
-export default class Home extends React.Component {
+class Home extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
+    this.state = {
+      name: '',
+      pass: ''
+    }
   }
 
   render() {
     return (
       <div id='header' style={bg}>
-        <h1 className="title"> 知了阅读</h1>
+        <h1 className="title"> {String.Title}</h1>
         <div className='login'>
           <div>
-            <Input className="input" placeholder="用户名"/>
-            <Input className="input" placeholder="密码"/>
-            <Button>登录</Button>
+            <Input className="input" placeholder={String.Placeholder.UserName} onChange={(e) => this.setState({name: e.target.value})}/>
+            <Input className="input" type="password" placeholder={String.Placeholder.Password} onChange={(e) => this.setState({pass: e.target.value})}/>
+            <Button onClick={this.onLogin}>{String.Login}</Button>
           </div>
           <div className='password'>
-            <Checkbox className="checkbox">记住密码</Checkbox>
-            <a className='a'>忘记密码</a>
-            <Button>注册</Button>
+            <Checkbox className="checkbox">{String.SavePassword}</Checkbox>
+            <a className='a'>{String.ForgetPassword}</a>
+            <Button>{String.Register}</Button>
           </div>
         </div>
-        <div id="headline">读书就是回家</div>
+        <div id="headline">{String.Topic}</div>
       </div>
     )
   }
+
+  onLogin = () => {
+    const url = Url.host + Url.login;
+    const { name, pass } = this.state;
+    Http.post(url, {
+      name,
+      pass
+    }, (res) => {
+      console.log(res);
+    }, (e) => {
+      console.log(e);
+    });
+  }
 }
+
+export default connect()(Home);

@@ -8,7 +8,7 @@ import request from 'superagent';
 class Http {
   constructor() { }
 
-  async get(url, onSuccess, onFailed) {
+  get(url, onSuccess, onFailed) {
     console.log('Get ' + url + ' started.');
     request
       .get(url)
@@ -21,7 +21,7 @@ class Http {
       });
   }
 
-  async post(url, params, onSuccess, onFailed) {
+  post(url, params, onSuccess, onFailed) {
     console.log('Post ' + url + ' started.');
     request
       .post(url)
@@ -30,9 +30,9 @@ class Http {
       .set('Content-Type', 'application/json')
       .end((err, res) => {
         if (err) {
-          onFailed && onFailed();
+          onFailed && onFailed(err);
         } else {
-          onSuccess && onSuccess();
+          onSuccess && onSuccess(res.body);
         }
       });
   }
