@@ -7,22 +7,21 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import store from './src/redux/store';
-import {Provider} from 'react-redux';
 
 import {
+  HashRouter,
   BrowserRouter as Router,
   Route,
 } from 'react-router-dom';
 
+import App from './src/pages/app/App';
 import Home from './src/pages/home/Home';
+import Register from './src/pages/user/Register';
 
 const router = (
-  <Provider store={store}>
-    <Router>
-      <Route path="/" component={Home}/>
-    </Router>
-  </Provider>
+  <HashRouter>
+    <App/>
+  </HashRouter>
 );
 
 ReactDOM.render(router, document.getElementById('root'));
