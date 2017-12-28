@@ -19,6 +19,8 @@ import {Checkbox} from 'antd';
 
 import Background from '../../../image/background.png';
 
+import Top250 from '../books/Top250';
+
 const bg = {
   width: "100%",
   height: "400px",
@@ -55,6 +57,8 @@ class Home extends React.Component {
           </div>
         </div>
         <div id="headline">{String.Topic}</div>
+
+        <Top250/>
       </div>
     )
   }
@@ -75,9 +79,7 @@ class Home extends React.Component {
 
 function select(store) {
   console.log(store);
-  return {
-
-  }
+  return {}
 }
 
 export default connect(select)(Home);
