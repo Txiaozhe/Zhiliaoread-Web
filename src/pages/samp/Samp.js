@@ -10,6 +10,7 @@ import {Layout, Input, Button, Modal} from 'antd';
 import {connect} from 'react-redux';
 import {Http} from '../../utils';
 import {Url} from '../../config';
+import './Samp.css';
 
 class Samp extends React.Component {
   constructor(props) {
@@ -28,8 +29,8 @@ class Samp extends React.Component {
 
   render() {
     return (
-      <Layout style={styles.container}>
-        <img src="https://www.baidu.com/img/bd_logo1.png" />
+      <Layout style={styles.container} >
+        <img src="../../../image/logo.png" style = {{width:'100%'}}/>
 
         <Layout style={styles.space}>
           <span style={styles.tag}>姓名</span>
@@ -118,8 +119,8 @@ const styles = {
     fontSize: 20
   },
   button: {
-    marginTop: 30,
-    width: 500,
+    marginTop: 70,
+    width: 200,
     height: 60,
     fontSize: 20
   },
@@ -130,7 +131,7 @@ const styles = {
     fontSize: 20
   },
   tag: {
-    marginTop: 30,
+    marginTop: 45,
     width: 200,
     height: 60,
     textAlign: 'center',
