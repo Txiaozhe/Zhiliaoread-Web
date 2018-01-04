@@ -30,41 +30,41 @@ class Samp extends React.Component {
   render() {
     return (
       <Layout style={styles.container} >
-        <img src="../../../image/logo.png" style = {{width:'100%'}}/>
+        <img src="./logo.png" style = {{width:'100%'}}/>
 
         <Layout style={styles.space}>
           <span style={styles.tag}>姓名</span>
-          <Input style={styles.input} onChange={(m) => this.setState({name: m.target.value})}/>
+          <Input placeholder="输入姓名" style={styles.input} onChange={(m) => this.setState({name: m.target.value})}/>
         </Layout>
 
         <Layout style={styles.space}>
           <span style={styles.tag}>电话</span>
-          <Input type="tel" maxLength="11" style={styles.input} onChange={(m) => this.setState({phone: m.target.value})}/>
+          <Input placeholder="输入电话号码" type="tel" maxLength="11" style={styles.input} onChange={(m) => this.setState({phone: m.target.value})}/>
         </Layout>
 
         <Layout style={styles.space}>
           <span style={styles.tag}>餐饮品牌</span>
-          <Input style={styles.input} onChange={(m) => this.setState({brand: m.target.value})}/>
+          <Input placeholder="输入品牌" style={styles.input} onChange={(m) => this.setState({brand: m.target.value})}/>
         </Layout>
 
         <Layout style={styles.space}>
           <span style={styles.tag}>经营餐厅年数</span>
-          <Input type="number" style={styles.input} onChange={(m) => this.setState({duration: m.target.value})}/>
+          <Input placeholder="输入经营年数" type="number" style={styles.input} onChange={(m) => this.setState({duration: m.target.value})}/>
         </Layout>
 
         <Layout style={styles.space}>
           <span style={styles.tag}>地址（省市）</span>
-          <Input style={styles.input} onChange={(m) => this.setState({location: m.target.value})}/>
+          <Input placeholder="输入省市，格式：浙江-杭州" style={styles.input} onChange={(m) => this.setState({location: m.target.value})}/>
         </Layout>
 
         <Layout style={styles.space}>
           <span style={styles.tag}>“城店”预计面积</span>
-          <Input type="number" style={styles.input} onChange={(m) => this.setState({area: m.target.value})}/>
+          <Input placeholder="输入面积" type="number" style={styles.input} onChange={(m) => this.setState({area: m.target.value})}/>
         </Layout>
 
         <Layout style={styles.space}>
           <span style={styles.tag}>计划开始时间</span>
-          <Input type="date" style={styles.input} onChange={(m) => this.setState({plan: m.target.value})}/>
+          <Input placeholder="输入日期，格式：2018-01-01" style={styles.input} onChange={(m) => this.setState({plan: m.target.value})}/>
         </Layout>
 
         <Button type="primary" style={styles.button} onClick={this.submit}>提交</Button>
@@ -117,6 +117,10 @@ const styles = {
     width: 500,
     height: 60,
     fontSize: 20
+  },
+  date_select: {
+    height: 60,
+    width: 320
   },
   button: {
     marginTop: 70,
