@@ -30,9 +30,9 @@ class Samp extends React.Component {
   render() {
     return (
       <Layout style={styles.container} >
-        <img src="./logo.png" style = {{width:'100%'}}/>
+        <img src="../../../image/logo.png" style = {{width:'100%'}}/>
 
-        <Layout style={styles.space}>
+        <Layout style={styles.space} className='top'>
           <span style={styles.tag}>姓名</span>
           <Input placeholder="输入姓名" style={styles.input} onChange={(m) => this.setState({name: m.target.value})}/>
         </Layout>
@@ -132,14 +132,14 @@ const styles = {
     marginTop: 20,
     height: 30,
     textAlign: 'center',
-    fontSize: 20
+    fontSize: 30
   },
   tag: {
-    marginTop: 45,
+    marginTop: 40,
     width: 200,
     height: 60,
     textAlign: 'center',
-    fontSize: 20
+    fontSize: 25
   }
 };
 
