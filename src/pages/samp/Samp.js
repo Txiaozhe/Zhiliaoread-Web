@@ -30,7 +30,7 @@ class Samp extends React.Component {
   render() {
     return (
       <Layout style={styles.container} >
-        <img src="../../../image/logo.png" style = {{width:'100%'}}/>
+        <img src="./logo.png" style = {{width:'100%'}}/>
 
         <Layout style={styles.space} className='top'>
           <span style={styles.tag}>姓名</span>
@@ -76,7 +76,7 @@ class Samp extends React.Component {
     const url = Url.host + Url.samp_register;
     for(let k in this.state) {
       if(!this.state[k]) {
-        Modal.success({
+        Modal.warn({
           title: '警告',
           content: '请检查输入是否正确！',
         });
@@ -115,8 +115,8 @@ const styles = {
     marginTop: 30,
     marginLeft: 10,
     width: 500,
-    height: 60,
-    fontSize: 20
+    height: 70,
+    fontSize: 30
   },
   date_select: {
     height: 60,
@@ -124,9 +124,9 @@ const styles = {
   },
   button: {
     marginTop: 70,
-    width: 200,
-    height: 60,
-    fontSize: 20
+    width: 250,
+    height: 70,
+    fontSize: 30
   },
   desc: {
     marginTop: 20,
@@ -135,11 +135,11 @@ const styles = {
     fontSize: 30
   },
   tag: {
-    marginTop: 40,
-    width: 200,
+    marginTop: 35,
+    width: 230,
     height: 60,
     textAlign: 'center',
-    fontSize: 25
+    fontSize: 30
   }
 };
 
