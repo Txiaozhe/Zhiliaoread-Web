@@ -11,7 +11,8 @@ const url = {
   login: '/api/v1/login',
   register: '/api/v1/register',
   top250: '/api/v1/books/top250',
-  samp_register: '/api/v1/samp/register'
+  samp_register: '/api/v1/samp/register',
+  samp_list: '/api/v1/samp/list'
 };
 
 export default url;

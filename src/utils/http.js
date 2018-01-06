@@ -16,7 +16,7 @@ class Http {
         if (err) {
           onFailed && onFailed(err);
         } else {
-          onSuccess && onSuccess(res)
+          onSuccess && onSuccess(res.body)
         }
       });
   }
@@ -28,6 +28,7 @@ class Http {
       .send(params)
       .set('Accept', 'application/json')
       .set('Content-Type', 'application/json')
+      .set('Access-Control-Allow-Origin','*')
       .end((err, res) => {
         if (err) {
           onFailed && onFailed(err);
